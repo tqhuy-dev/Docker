@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-redisp.initRedis()
+// redisp.initRedis()
 
 
 app.use((req, res, next) => {
