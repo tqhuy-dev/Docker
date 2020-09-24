@@ -7,10 +7,30 @@ jobs:
       - image: tqhuy1996developer/nodejs
     steps:
       - checkout
-      - run: echo "this is the build job"
+      - setup_remote_docker
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run:
+        name: Install Nodejs packages
+        command: |
+          npm install
+      - run:
+        name: Start app
+        command: |
+          node index.js
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
 # Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  build_nodejs:
     jobs:
       - build
