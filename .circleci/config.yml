@@ -16,5 +16,4 @@ jobs:
       - run:
           name: build docker
           command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+            docker build . -t tqhuy1996developer/nodejs
