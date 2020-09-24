@@ -13,6 +13,7 @@ jobs:
           name: npm install dependency
           command: |
             npm install
+      - setup_remote_docker
       - run:
           name: build docker
           command: |
