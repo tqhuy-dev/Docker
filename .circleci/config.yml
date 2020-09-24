@@ -6,12 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: The First Step
+          name: npm install dependency
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            echo 'npm install'
       - run:
-          name: Code Has Arrived
+          name: build docker
           command: |
             ls -al
             echo '^^^That should look familiar^^^'
