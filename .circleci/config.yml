@@ -15,11 +15,9 @@ jobs:
             npm install
       - setup_remote_docker
       - run:
-          name: build docker
+          name: build and push docker
           command: |
             docker build . -t tqhuy1996developer/nodejs
-      - run:
-          name: push docker
-          command: |
             docker login -u tqhuy1996developer -p Husky@0946515847
             docker push tqhuy1996developer/nodejs
+            
