@@ -1,36 +1,15 @@
 version: 2.1
-
-# Define the jobs we want to run for this project
 jobs:
   build:
     docker:
-      - image: tqhuy1996developer/nodejs
+      - image:tqhuy1996developer/nodejs
     steps:
       - checkout
-      - setup_remote_docker
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
       - run:
-        name: Install Nodejs packages
+        name: install dependency
         command: |
-          npm install
+          echo 'npm install dependency'
       - run:
-        name: Start app
+        name: build docker
         command: |
-          node index.js
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-# Orchestrate our job run sequence
-workflows:
-  build_nodejs:
-    jobs:
-      - build
+          echo 'build docker'
