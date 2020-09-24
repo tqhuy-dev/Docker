@@ -18,3 +18,7 @@ jobs:
           name: build docker
           command: |
             docker build . -t tqhuy1996developer/nodejs
+      - run:
+          name: push docker
+          command: |
+            docker push tqhuy1996developer/nodejs
