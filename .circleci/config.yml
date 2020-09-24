@@ -5,10 +5,14 @@ jobs:
       - image: alpine:3.7
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
       - run:
           name: npm install dependency
           command: |
-            echo 'npm install'
+            npm install
       - run:
           name: build docker
           command: |
