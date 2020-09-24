@@ -2,14 +2,16 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image:tqhuy1996developer/nodejs
+      - image: alpine:3.7
     steps:
       - checkout
       - run:
-        name: install dependency
-        command: |
-          echo 'npm install dependency'
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
       - run:
-        name: build docker
-        command: |
-          echo 'build docker'
+          name: Code Has Arrived
+          command: |
+            ls -al
+            echo '^^^That should look familiar^^^'
