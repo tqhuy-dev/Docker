@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodedocker.example.com
+  labels: 
+    app: nodejs
+spec:
+  containers:
+    - name: nodejs-docker
+      image: tqhuy1996developer/nodejs
+      ports:
+        - containerPort: 3000

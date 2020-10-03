@@ -55,7 +55,7 @@ app.post('/api/v1/redis',(req, res, next) => {
 app.use((req, res, next) => {
     next({
         status: 404,
-        message: 'request not found'
+        message: 'request not found 1'
     })
 })
 
