@@ -8,5 +8,6 @@ spec:
   containers:
     - name: nodejs-docker
       image: tqhuy1996developer/nodejs
+      imagePullPolicy : Always
       ports:
         - containerPort: 3000
