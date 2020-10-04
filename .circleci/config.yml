@@ -23,6 +23,6 @@ jobs:
           name: build and push docker
           command: |
             docker build . -t tqhuy1996developer/nodejs
-            docker login -u tqhuy1996developer -p Husky@0946515847
+            docker login -u tqhuy1996developer -p 89d9a42e-57b1-42de-8e11-0277762618cf
             docker push tqhuy1996developer/nodejs
             

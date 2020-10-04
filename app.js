@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 app.get('/api/v1/', (req, res, next) => {
     res.status(200).json({
-        message: 'api is working',
+        message: 'api is working v2',
         status: 'success'
     })
 });
